@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <template.h>
+#include "./includes/template.h"
 
 
 int my_add(int x, int y){

@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <check.h>
-#include <template.h>
+#include "../src/lib/includes/template.h"
 
 
 START_TEST(test_template_my_add) {
