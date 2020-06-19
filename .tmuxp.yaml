@@ -6,9 +6,9 @@ windows:
       layout: main-horizontal
       panes:
           - shell_command:
-              - nvim ./src
+              - nvim ./src/lib
           - shell_command:
               - nvim ./tests
           - shell_command:
               - cd ./build
-              - git log --oneline
+              - git log --oneline --author="bjsi"
