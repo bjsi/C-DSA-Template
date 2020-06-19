@@ -10,11 +10,13 @@ Install the following programs:
 - Check
 - Valgrind
 
-    $ mkdir build && cd build
-    $ cmake ..
-    $ make
-    $ make test
-    $ make valgrind_test_template
+```
+$ mkdir build && cd build
+$ cmake ..
+$ make
+$ make test
+$ make valgrind_test_template
+```
 
 Note: For each add_executable in the build, you will need to create a specific target for the valgrind with add_custom_target.
 
