@@ -14,19 +14,19 @@ include(CheckLibraryExists)
 include(CheckSymbolExists)
 include(CheckTypeSize)
 
-# Since Check uses Threads to paralelize the tests, it's mandatory
+# Since Check uses Threads to paralelize the tests, it's mandatory to
 # add pthread as a dependency, alongside the Check libraries.
-add_executable(test_sample test_sample.c)
-target_link_libraries(test_sample sample ${CHECK_LIBRARIES} pthread)
+add_executable(test_template test_template.c)
+target_link_libraries(test_template template ${CHECK_LIBRARIES} pthread)
 
 # Create testing target and redirect its output to `Testing` folder
-add_test(NAME test_sample COMMAND test_sample WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/Testing)
-set_tests_properties(test_sample PROPERTIES TIMEOUT 30) 
+add_test(NAME test_template COMMAND test_template WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/Testing)
+set_tests_properties(test_template PROPERTIES TIMEOUT 30)
 
 # Aditional Valgrind test to check memory leaks in code
 include(FindValgrind)
 
-add_custom_target(valgrind_test_sample
-  COMMAND ${VALGRIND_PROGRAM} --leak-check=full $<TARGET_FILE:test_sample>
-  DEPENDS test_sample
+add_custom_target(valgrind_test_template
+  COMMAND ${VALGRIND_PROGRAM} --leak-check=full $<TARGET_FILE:test_template>
+  DEPENDS test_template
 )

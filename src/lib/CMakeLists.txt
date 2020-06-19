@@ -1,11 +1,11 @@
-add_library(sample sample.c)
+add_library(template template.c)
 
-target_include_directories(sample PUBLIC includes)
-set_target_properties(sample PROPERTIES PUBLIC_HEADER includes/sample.h)
+target_include_directories(template PUBLIC includes)
+set_target_properties(template PROPERTIES PUBLIC_HEADER includes/template.h)
 
-set_target_properties(sample PROPERTIES SOVERSION 1)
+set_target_properties(template PROPERTIES SOVERSION 1)
 
-install(TARGETS sample
+install(TARGETS template
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
